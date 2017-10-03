@@ -1,5 +1,5 @@
 import auth0 from 'auth0-js'
-import { AUTH_CONFIG } from './auth0-variables'
+// import { AUTH_CONFIG } from './auth0-variables'
 import EventEmitter from 'EventEmitter'
 import router from './../router'
 
@@ -15,10 +15,10 @@ export default class AuthService {
   }
 
   auth0 = new auth0.WebAuth({
-    domain: AUTH_CONFIG.domain,
-    clientID: AUTH_CONFIG.clientId,
-    redirectUri: AUTH_CONFIG.callbackUrl,
-    audience: `https://${AUTH_CONFIG.domain}/userinfo`,
+    domain: 'coderlands.auth0.com',
+    clientID: 'F1JYz4xmFyeum9EJbos85nht3LYuoAar',
+    redirectUri: 'http://localhost:8080/callback',
+    audience: 'https://coderlands.auth0.com/userinfo',
     responseType: 'token id_token',
     scope: 'openid'
   })
